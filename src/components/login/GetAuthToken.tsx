@@ -1,4 +1,4 @@
-import { createEffect, createResource, ErrorBoundary, Show } from 'solid-js'
+import { createEffect } from 'solid-js'
 import { useNavigate } from 'solid-start'
 
 export interface GetAuthTokenProps {
