@@ -1,10 +1,13 @@
-import { Title } from 'solid-start'
+import { Title, useNavigate } from 'solid-start'
 
 export default function Home() {
+  if (typeof localStorage === 'undefined' || !localStorage?.isLogin) {
+    const navigate = useNavigate()
+    navigate('/login')
+  }
   return (
     <main>
       <Title>Solid misskey client</Title>
-      <h1>Hello world!</h1>
     </main>
   )
 }
