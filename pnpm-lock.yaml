@@ -1,7 +1,6 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@miauth-js': link:types/@miauth-js
   '@solidjs/meta': ^0.28.2
   '@solidjs/router': ^0.7.0
   '@types/eslint': ^8.21.1
@@ -30,7 +29,6 @@ specifiers:
   vite: ^4.1.4
 
 dependencies:
-  '@miauth-js': link:types/@miauth-js
   '@solidjs/meta': 0.28.2_solid-js@1.6.11
   '@solidjs/router': 0.7.0_solid-js@1.6.11
   '@types/uuid': 9.0.1
