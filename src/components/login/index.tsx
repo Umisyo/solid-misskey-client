@@ -1,7 +1,7 @@
 import { Switch, Match } from 'solid-js'
 import { useSearchParams } from 'solid-start'
-import GetAuthToken from '~/components/login/getAuthToken'
-import JumpMiAuth from '~/components/login/jumpMiAuth'
+import GetAuthToken from '~/components/login/GetAuthToken'
+import JumpMiAuth from '~/components/login/JumpMiAuth'
 
 export default function Login() {
   const [param] = useSearchParams()
