@@ -12,6 +12,7 @@ import {
   Scripts,
   Title
 } from 'solid-start'
+import 'tailwindcss/tailwind.css'
 import './root.css'
 
 export default function Root() {

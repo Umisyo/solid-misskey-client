@@ -34,9 +34,11 @@
   "dependencies": {
     "@solidjs/meta": "^0.28.2",
     "@solidjs/router": "^0.7.0",
+    "@types/uuid": "^9.0.1",
     "solid-js": "^1.6.11",
     "solid-start": "^0.2.22",
-    "undici": "^5.15.1"
+    "undici": "^5.15.1",
+    "uuid": "^9.0.0"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
