@@ -6,7 +6,9 @@ export default function JumpMiAuth() {
   const sessionID = uuidv4()
   const [requestInstance, setRequestInstance] = createSignal('')
   const hundleSubmit = () => {
-    const miAuthUrl = `https://${requestInstance()}/miauth/${sessionID}?callback=http://localhost:3000/login?instance=${requestInstance()}`
+    const miAuthUrl = `https://${requestInstance()}/miauth/${sessionID}?callback=${
+      import.meta.env.VITE_APP_URL
+    }/login?instance=${requestInstance()}`
     console.log(miAuthUrl)
     window.location.href = miAuthUrl
   }
