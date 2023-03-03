@@ -1,6 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@solid-primitives/websocket': ^0.3.5
   '@solidjs/meta': ^0.28.2
   '@solidjs/router': ^0.7.0
   '@types/eslint': ^8.21.1
@@ -29,6 +30,7 @@ specifiers:
   vite: ^4.1.4
 
 dependencies:
+  '@solid-primitives/websocket': 0.3.5_solid-js@1.6.11
   '@solidjs/meta': 0.28.2_solid-js@1.6.11
   '@solidjs/router': 0.7.0_solid-js@1.6.11
   '@types/uuid': 9.0.1
@@ -1553,6 +1555,14 @@ packages:
 
   /@sideway/pinpoint/2.0.0:
     resolution: {integrity: sha512-RNiOoTPkptFtSVzQevY/yWtZwf/RxyVnPy/OcA9HBM3MlGDnBEYL5B41H0MTn0Uec8Hi+2qUtTfG2WWZBmMejQ==}
+
+  /@solid-primitives/websocket/0.3.5_solid-js@1.6.11:
+    resolution: {integrity: sha512-VuWVgsAtS236tAlGvcy6RGfHTWG7f5ITkafIsieMsGhPZD9Mg/3++qFeeR9LiI/Lv7sT8IX6raVay246IKe96A==}
+    peerDependencies:
+      solid-js: ^1.6.0
+    dependencies:
+      solid-js: 1.6.11
+    dev: false
 
   /@solidjs/meta/0.28.2_solid-js@1.6.11:
     resolution: {integrity: sha512-avlLgBPdk4KVxzRGFlYp/MIJo8B5jVgXPgk6OUnUP8km21Z+ovO+DUd7ZPA7ejv8PBdWi9GE3zCzw8RU2YuV2Q==}
