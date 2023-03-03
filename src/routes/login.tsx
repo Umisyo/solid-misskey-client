@@ -1,5 +1,5 @@
 import { Title } from 'solid-start'
-import Login from '~/components/login'
+import Login from '~/components/features/login'
 
 export default function LoginPage() {
   return (
