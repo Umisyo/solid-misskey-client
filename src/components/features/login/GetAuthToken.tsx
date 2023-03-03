@@ -18,6 +18,7 @@ export default function GetAuthToken(props: GetAuthTokenProps) {
       })
       .then(text => {
         if (text.token) {
+          localStorage.setItem('instance', props.instance)
           localStorage.setItem('isLogin', text.ok)
           localStorage.setItem('UserToken', text.token)
           localStorage.setItem('UserId', text.user.id)
