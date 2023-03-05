@@ -1,6 +1,6 @@
 import { v4 as uuidv4 } from 'uuid'
 import createWebsocket from '@solid-primitives/websocket'
-import { createEffect, createSignal, Index } from 'solid-js'
+import { createEffect, createSignal, Index, Show } from 'solid-js'
 import NoteCard from '~/components/features/TimeLine/NoteCard'
 import { Note, TimeLineChannel } from '~/components/features/TimeLine'
 
@@ -48,16 +48,21 @@ export default function Column(props: ColumnProps) {
   })
 
   return (
-    <>
-      <ul class="flex flex-col-reverse w-1/3 justify-end">
-        <Index each={notes()}>
-          {note => (
-            <li class="border-l border-r">
-              <NoteCard {...note()} />
-            </li>
-          )}
-        </Index>
-      </ul>
-    </>
+    <Show when={props.channel !== 'main'}>
+      <div class="flex flex-col w-96 max-h-full">
+        <header>
+          <span>{props.channel}</span>
+        </header>
+        <ul class="overflow-hidden overflow-y-scroll min-h-0">
+          <Index each={notes().reverse()}>
+            {note => (
+              <li class="border-l border-r">
+                <NoteCard {...note()} />
+              </li>
+            )}
+          </Index>
+        </ul>
+      </div>
+    </Show>
   )
 }

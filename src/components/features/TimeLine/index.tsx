@@ -1,3 +1,4 @@
+import { createSignal, Index } from 'solid-js'
 import Column from '~/components/features/TimeLine/Column'
 
 export type User = {
@@ -13,6 +14,7 @@ export type User = {
 
 export interface Note {
   id: string
+  renote: Note | null
   createdAt: string
   text: string | null
   cw: string | null
@@ -21,20 +23,65 @@ export interface Note {
   visibility: string
 }
 
-export type TimeLineChannel =
-  | 'globalTimeline'
-  | 'homeTimeline'
-  | 'hybridTimeline'
-  | 'localTimeline'
-  | 'main'
+const timeLineChannels = [
+  'globalTimeline',
+  'homeTimeline',
+  'hybridTimeline',
+  'localTimeline',
+  'main',
+  ''
+] as const
+
+export type TimeLineChannel = (typeof timeLineChannels)[number]
 
 export default function TimeLine() {
+  const [channels, setChannels] = createSignal<TimeLineChannel[]>([
+    'globalTimeline'
+  ])
+  const [selectChannel, setSelectChannel] = createSignal<TimeLineChannel>('')
+
+  const isTimeLineChannel = (channel: string): channel is TimeLineChannel => {
+    return timeLineChannels.includes(channel as TimeLineChannel)
+  }
+
+  const handleSelect = (
+    Event: InputEvent & { currentTarget: HTMLSelectElement; target: Element }
+  ) => {
+    const channel = Event.currentTarget.value
+    if (isTimeLineChannel(channel)) {
+      setSelectChannel(channel)
+    }
+  }
+
+  const addChannel = () => {
+    if (selectChannel() === '') {
+      return
+    }
+    setChannels([...channels(), selectChannel()])
+    setSelectChannel('')
+  }
+
   return (
     <>
-      <p>TimeLine</p>
-      <div class="flex space-x-4">
-        <Column channel="globalTimeline" />
-        <Column channel="localTimeline" />
+      <label for="selectChannnel">
+        Add Channel
+        <select
+          name="channel"
+          value={selectChannel()}
+          onInput={e => handleSelect(e)}
+        >
+          <option value="globalTimeline">Global Timeline</option>
+          <option value="homeTimeline">Home Timeline</option>
+          <option value="hybridTimeline">Hybrid Timeline</option>
+          <option value="localTimeline">Local Timeline</option>
+          <option value="main">Main</option>
+        </select>
+      </label>
+      <button onClick={addChannel}>Add</button>
+      <div class="flex space-x-4 overflow-x-auto h-screen">
+        <Index each={channels()}>
+          {channel => <Column channel={channel()} />}
+        </Index>
       </div>
     </>
   )

@@ -7,7 +7,7 @@ export default function Home() {
     navigate('/login')
   }
   return (
-    <main>
+    <main class="h-screen">
       <Title>Solid misskey client</Title>
       <TimeLine />
     </main>
