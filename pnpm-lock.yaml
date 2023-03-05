@@ -4,6 +4,7 @@ specifiers:
   '@solid-primitives/websocket': ^0.3.5
   '@solidjs/meta': ^0.28.2
   '@solidjs/router': ^0.7.0
+  '@thisbeyond/solid-dnd': ^0.7.4
   '@types/eslint': ^8.21.1
   '@types/node': ^18.11.18
   '@types/prettier': ^2.7.2
@@ -33,6 +34,7 @@ dependencies:
   '@solid-primitives/websocket': 0.3.5_solid-js@1.6.11
   '@solidjs/meta': 0.28.2_solid-js@1.6.11
   '@solidjs/router': 0.7.0_solid-js@1.6.11
+  '@thisbeyond/solid-dnd': 0.7.4_solid-js@1.6.11
   '@types/uuid': 9.0.1
   solid-js: 1.6.11
   solid-start: 0.2.22_gqfaputkq2jqm75tblm2mef4ve
@@ -1577,6 +1579,14 @@ packages:
       solid-js: ^1.5.3
     dependencies:
       solid-js: 1.6.11
+
+  /@thisbeyond/solid-dnd/0.7.4_solid-js@1.6.11:
+    resolution: {integrity: sha512-jgV9EtR3gAtVsILG8p1OAGrhHIgnK4W04YxpyLgJRCDKEFYQWuDrMdUe8F5Kc6pcVXlC4IMXr4cB8fS2Ut3/Ow==}
+    peerDependencies:
+      solid-js: ^1.5
+    dependencies:
+      solid-js: 1.6.11
+    dev: false
 
   /@types/babel__core/7.20.0:
     resolution: {integrity: sha512-+n8dL/9GWblDO0iU6eZAwEIJVr5DWigtle+Q6HLOrh/pdbXOhOtqzq8VPPE2zvNJzSKY4vH/z3iT3tn0A3ypiQ==}

@@ -35,6 +35,7 @@
     "@solid-primitives/websocket": "^0.3.5",
     "@solidjs/meta": "^0.28.2",
     "@solidjs/router": "^0.7.0",
+    "@thisbeyond/solid-dnd": "^0.7.4",
     "@types/uuid": "^9.0.1",
     "solid-js": "^1.6.11",
     "solid-start": "^0.2.22",
