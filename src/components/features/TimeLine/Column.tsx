@@ -74,7 +74,7 @@ export default function Column(props: ColumnProps) {
   return (
     <Show when={props.channel !== 'main'}>
       <div class="flex flex-col w-96 max-h-full border-l border-r">
-        <header>
+        <header class="border h-10">
           <span>{props.channel}</span>
         </header>
         <ul class="overflow-hidden overflow-y-scroll min-h-0">
