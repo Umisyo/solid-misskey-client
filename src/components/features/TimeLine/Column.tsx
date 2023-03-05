@@ -14,6 +14,8 @@ import fetchAPI from '~/features/api/fetchAPI'
 
 export interface ColumnProps {
   channel: TimeLineChannel
+  handleDelete: (index: number) => void
+  index: number
 }
 
 export default function Column(props: ColumnProps) {
@@ -74,8 +76,16 @@ export default function Column(props: ColumnProps) {
   return (
     <Show when={props.channel !== 'main'}>
       <div class="flex flex-col w-96 max-h-full border-l border-r">
-        <header class="border h-10">
+        <header class="flex items-center border min-h-[2.5rem] px-2">
           <span>{props.channel}</span>
+          <button
+            class="m-0 ml-auto"
+            onClick={() => {
+              props.handleDelete(props.index)
+            }}
+          >
+            x
+          </button>
         </header>
         <ul class="overflow-hidden overflow-y-scroll min-h-0">
           <Switch>

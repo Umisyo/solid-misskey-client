@@ -60,6 +60,13 @@ export default function TimeLine() {
     setChannels([...channels(), selectChannel()])
   }
 
+  const handleDelete = (index: number) => {
+    const newChannels = channels()
+      .slice(0, index)
+      .concat(channels().slice(index + 1))
+    setChannels(newChannels)
+  }
+
   return (
     <>
       <label for="selectChannnel">
@@ -79,7 +86,13 @@ export default function TimeLine() {
       <button onClick={addChannel}>Add</button>
       <div class="flex overflow-x-scroll h-screen">
         <Index each={channels()}>
-          {channel => <Column channel={channel()} />}
+          {(channel, index) => (
+            <Column
+              channel={channel()}
+              handleDelete={handleDelete}
+              index={index}
+            />
+          )}
         </Index>
       </div>
     </>
