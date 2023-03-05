@@ -19,10 +19,6 @@ export interface ColumnProps {
 }
 
 export default function Column(props: ColumnProps) {
-  const socketUrl = `wss://${localStorage.getItem(
-    'instance'
-  )}/streaming?i=${localStorage.getItem('UserToken')}`
-
   const getTimeLines = async () => {
     const requestChannel =
       props.channel === 'homeTimeline'
@@ -45,6 +41,10 @@ export default function Column(props: ColumnProps) {
     const messageDataJson: Note = JSON.parse(msg.data).body.body
     mutate(prev => (prev ? [messageDataJson, ...prev] : [messageDataJson]))
   }
+  const socketUrl = `wss://${localStorage.getItem(
+    'instance'
+  )}/streaming?i=${localStorage.getItem('UserToken')}`
+
   const [connect, _, send, state] = createWebsocket(
     socketUrl,
     onMessage,
