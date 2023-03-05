@@ -1,4 +1,4 @@
-import { createSignal, Index } from 'solid-js'
+import { createSignal, For } from 'solid-js'
 import Column from '~/components/features/TimeLine/Column'
 
 export type User = {
@@ -85,15 +85,15 @@ export default function TimeLine() {
       </label>
       <button onClick={addChannel}>Add</button>
       <div class="flex overflow-x-scroll h-screen">
-        <Index each={channels()}>
+        <For each={channels()}>
           {(channel, index) => (
             <Column
-              channel={channel()}
+              channel={channel}
               handleDelete={handleDelete}
-              index={index}
+              index={index()}
             />
           )}
-        </Index>
+        </For>
       </div>
     </>
   )
