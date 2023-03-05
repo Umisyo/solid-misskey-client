@@ -1,4 +1,5 @@
 import { Title, useNavigate } from 'solid-start'
+import TimeLine from '~/components/features/TimeLine'
 
 export default function Home() {
   if (typeof localStorage === 'undefined' || !localStorage?.isLogin) {
@@ -6,8 +7,9 @@ export default function Home() {
     navigate('/login')
   }
   return (
-    <main>
+    <main class="h-screen">
       <Title>Solid misskey client</Title>
+      <TimeLine />
     </main>
   )
 }

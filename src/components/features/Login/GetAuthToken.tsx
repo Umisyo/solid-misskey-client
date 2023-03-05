@@ -9,6 +9,7 @@ export interface GetAuthTokenProps {
 export default function GetAuthToken(props: GetAuthTokenProps) {
   const fetchToken = async () => {
     const checkUrl = `https://${props.instance}/api/miauth/${props.sessionID}/check`
+    localStorage.setItem('instance', props.instance)
     return await fetch(checkUrl, { method: 'POST' })
       .then(res => {
         if (!res.ok) {
