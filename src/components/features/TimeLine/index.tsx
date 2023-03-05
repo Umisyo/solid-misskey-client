@@ -77,7 +77,7 @@ export default function TimeLine() {
         </select>
       </label>
       <button onClick={addChannel}>Add</button>
-      <div class="flex space-x-4 overflow-x-scroll h-screen">
+      <div class="flex overflow-x-scroll h-screen">
         <Index each={channels()}>
           {channel => <Column channel={channel()} />}
         </Index>
