@@ -1,8 +1,17 @@
 import { v4 as uuidv4 } from 'uuid'
 import createWebsocket from '@solid-primitives/websocket'
-import { createEffect, createSignal, Index, Show } from 'solid-js'
+import {
+  createEffect,
+  createResource,
+  createSignal,
+  Index,
+  Match,
+  Show,
+  Switch
+} from 'solid-js'
 import NoteCard from '~/components/features/TimeLine/NoteCard'
 import { Note, TimeLineChannel } from '~/components/features/TimeLine'
+import fetchAPI from '~/features/api/fetchAPI'
 
 export interface ColumnProps {
   channel: TimeLineChannel
@@ -13,11 +22,27 @@ export default function Column(props: ColumnProps) {
     'instance'
   )}/streaming?i=${localStorage.getItem('UserToken')}`
 
-  const [notes, setNotes] = createSignal<Note[]>([])
+  const getTimeLines = async () => {
+    const requestChannel =
+      props.channel === 'homeTimeline'
+        ? 'timeline'
+        : props.channel
+            .split(/(?=[A-Z])/)
+            .join('-')
+            .toLowerCase()
+    const endpoint = `notes/${requestChannel}`
+    const requestBody = {
+      limit: 100
+    }
+    const defaultNotes: Note[] = await fetchAPI(endpoint, requestBody)
+    return defaultNotes.reverse()
+  }
+
+  const [notes, { mutate }] = createResource<Note[]>(getTimeLines)
 
   const onMessage = (msg: MessageEvent) => {
     const messageDataJson: Note = JSON.parse(msg.data).body.body
-    setNotes(prev => [...prev, messageDataJson])
+    mutate(prev => (prev ? [...prev, messageDataJson] : [messageDataJson]))
   }
   const [connect, _, send, state] = createWebsocket(
     socketUrl,
@@ -49,18 +74,25 @@ export default function Column(props: ColumnProps) {
 
   return (
     <Show when={props.channel !== 'main'}>
-      <div class="flex flex-col w-96 max-h-full">
+      <div class="flex flex-col w-96 max-h-full border-l border-r">
         <header>
           <span>{props.channel}</span>
         </header>
         <ul class="overflow-hidden overflow-y-scroll min-h-0">
-          <Index each={notes().reverse()}>
-            {note => (
-              <li class="border-l border-r">
-                <NoteCard {...note()} />
-              </li>
-            )}
-          </Index>
+          <Switch>
+            <Match when={notes.loading}>
+              <p>Loading...</p>
+            </Match>
+            <Match when={!notes.loading}>
+              <Index each={notes()?.reverse()}>
+                {note => (
+                  <li>
+                    <NoteCard {...note()} />
+                  </li>
+                )}
+              </Index>
+            </Match>
+          </Switch>
         </ul>
       </div>
     </Show>
