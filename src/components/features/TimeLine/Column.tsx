@@ -3,7 +3,7 @@ import createWebsocket from '@solid-primitives/websocket'
 import {
   createEffect,
   createResource,
-  Index,
+  For,
   Match,
   Show,
   Switch
@@ -34,14 +34,14 @@ export default function Column(props: ColumnProps) {
       limit: 100
     }
     const defaultNotes: Note[] = await fetchAPI(endpoint, requestBody)
-    return defaultNotes.reverse()
+    return defaultNotes
   }
 
   const [notes, { mutate }] = createResource<Note[]>(getTimeLines)
 
   const onMessage = (msg: MessageEvent) => {
     const messageDataJson: Note = JSON.parse(msg.data).body.body
-    mutate(prev => (prev ? [...prev, messageDataJson] : [messageDataJson]))
+    mutate(prev => (prev ? [messageDataJson, ...prev] : [messageDataJson]))
   }
   const [connect, _, send, state] = createWebsocket(
     socketUrl,
@@ -83,13 +83,13 @@ export default function Column(props: ColumnProps) {
               <p>Loading...</p>
             </Match>
             <Match when={!notes.loading}>
-              <Index each={notes()?.reverse()}>
+              <For each={notes()}>
                 {note => (
                   <li>
-                    <NoteCard {...note()} />
+                    <NoteCard {...note} />
                   </li>
                 )}
-              </Index>
+              </For>
             </Match>
           </Switch>
         </ul>
