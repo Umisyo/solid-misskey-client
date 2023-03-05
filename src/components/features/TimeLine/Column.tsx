@@ -3,7 +3,6 @@ import createWebsocket from '@solid-primitives/websocket'
 import {
   createEffect,
   createResource,
-  createSignal,
   Index,
   Match,
   Show,
