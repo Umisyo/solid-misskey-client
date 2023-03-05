@@ -58,7 +58,6 @@ export default function TimeLine() {
       return
     }
     setChannels([...channels(), selectChannel()])
-    setSelectChannel('')
   }
 
   return (
