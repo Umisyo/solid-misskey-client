@@ -7,7 +7,9 @@ export default function NoteCard(props: Note) {
       <Switch>
         <Match when={props.renote}>
           <header>
-            <span class="font-bold text-sm">{props.user.name}</span>
+            <span class="font-bold text-sm">
+              {props.user.name ? props.user.name : `@${props.userId}`}
+            </span>
             <span class="text-xs">がリノートしました</span>
             <Show when={props.text}>
               <p>{props.text}</p>
@@ -15,7 +17,9 @@ export default function NoteCard(props: Note) {
           </header>
           <div class="border border-dotted">
             <header>
-              <span class="font-bold text-xs">{props.user.name}</span>
+              <span class="font-bold text-xs">
+                {props.user.name ? props.user.name : `@${props.userId}`}
+              </span>
             </header>
             <p class="break-words text-xs">{props.renote?.text}</p>
           </div>
@@ -23,7 +27,9 @@ export default function NoteCard(props: Note) {
         <Match when={!props.renote}>
           <div>
             <header>
-              <span class="font-bold text-sm">{props.user.name}</span>
+              <span class="font-bold text-sm">
+                {props.user.name ? props.user.name : `@${props.userId}`}
+              </span>
               <span class="ml-2 text-xs">@{props.userId}</span>
             </header>
             <p class="break-words">{props.text}</p>
