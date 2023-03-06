@@ -7,6 +7,7 @@ export async function GET({ params }: APIEvent) {
   const response = (await axios.post(checkUrl, {})).data
 
   return createUserSession(
+    params.instance,
     response.ok,
     response.token,
     response.user.username,

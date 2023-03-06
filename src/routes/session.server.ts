@@ -25,6 +25,7 @@ export async function logout(request: Request) {
   })
 }
 export async function createUserSession(
+  instance: string,
   isLogin: boolean,
   token: string,
   userName: string,
@@ -32,6 +33,7 @@ export async function createUserSession(
   redirectTo: string
 ) {
   const session = await storage.getSession()
+  session.set('instance', instance)
   session.set('isLogin', isLogin)
   session.set('token', token)
   session.set('userName', encodeURIComponent(userName))
