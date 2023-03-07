@@ -14,7 +14,7 @@ specifiers:
   esbuild: ^0.17.0
   eslint: ^8.35.0
   eslint-config-prettier: ^8.6.0
-  eslint-plugin-solid: ^0.10.0
+  eslint-plugin-solid: ^0.11.0
   husky: ^8.0.3
   lint-staged: ^13.1.2
   postcss: ^8.4.21
@@ -49,7 +49,7 @@ devDependencies:
   esbuild: 0.17.10
   eslint: 8.35.0
   eslint-config-prettier: 8.6.0_eslint@8.35.0
-  eslint-plugin-solid: 0.10.0_ycpbpc6yetojsgtrx3mwntkhsu
+  eslint-plugin-solid: 0.11.0_ycpbpc6yetojsgtrx3mwntkhsu
   husky: 8.0.3
   lint-staged: 13.1.2
   postcss: 8.4.21
@@ -2925,8 +2925,8 @@ packages:
       eslint: 8.35.0
     dev: true
 
-  /eslint-plugin-solid/0.10.0_ycpbpc6yetojsgtrx3mwntkhsu:
-    resolution: {integrity: sha512-x8Jpe1EI44neuMuXG8safkIHWozkjJ2UCi9k6204OYL5sK+1+fSOOHuwd9i6bG2NcHV49SIykG3rbZCuojwtfA==}
+  /eslint-plugin-solid/0.11.0_ycpbpc6yetojsgtrx3mwntkhsu:
+    resolution: {integrity: sha512-3ve6IpEtl8nOvJnjaJACqlBmv449l6dMMhMczjQWvvLlRqkzLemgsJ9H+Isu8GLSBTNxDIm5oSKx/lO2j8vKbA==}
     engines: {node: '>=12.0.0'}
     peerDependencies:
       eslint: ^6.0.0 || ^7.0.0 || ^8.0.0
