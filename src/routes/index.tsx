@@ -2,7 +2,7 @@ import axios from 'axios'
 import { Title, useRouteData } from 'solid-start'
 import { createServerData$, redirect } from 'solid-start/server'
 import https from 'https'
-// import TimeLine from '~/components/features/TimeLine'
+import TimeLine from '~/components/features/TimeLine'
 import { createEffect } from 'solid-js'
 
 export function routeData() {
@@ -29,7 +29,7 @@ export default function Home() {
   return (
     <main class="h-screen">
       <Title>Solid misskey client</Title>
-      {/* <TimeLine /> */}
+      <TimeLine />
     </main>
   )
 }

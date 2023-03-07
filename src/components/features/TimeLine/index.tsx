@@ -1,4 +1,6 @@
+import axios from 'axios'
 import { createSignal, For } from 'solid-js'
+import { useNavigate } from 'solid-start'
 import Column from '~/components/features/TimeLine/Column'
 
 export type User = {
@@ -67,6 +69,8 @@ export default function TimeLine() {
     setChannels(newChannels)
   }
 
+  const navigate = useNavigate()
+
   return (
     <>
       <label for="selectChannnel">
@@ -84,6 +88,19 @@ export default function TimeLine() {
         </select>
       </label>
       <button onClick={addChannel}>Add</button>
+      <div>
+        <button
+          onClick={() => {
+            axios
+              .post(`${import.meta.env.VITE_APP_URL}/api/logout`)
+              .finally(() => {
+                navigate('/login')
+              })
+          }}
+        >
+          Logout
+        </button>
+      </div>
       <div class="flex overflow-x-scroll h-screen">
         <For each={channels()}>
           {(channel, index) => (
