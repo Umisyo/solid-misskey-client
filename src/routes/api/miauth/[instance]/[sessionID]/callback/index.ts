@@ -12,6 +12,6 @@ export async function GET({ params }: APIEvent) {
     response.token,
     response.user.username,
     response.user.avatarUrl,
-    'https://localhost:3000/'
+    import.meta.env.VITE_APP_URL
   )
 }
