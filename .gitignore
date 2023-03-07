@@ -27,5 +27,5 @@ Thumbs.db
 .env.local
 
 #cert
-localhost-key.pem
-localhost.pem
+localhost+2-key.pem
+localhost+2.pem

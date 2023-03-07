@@ -1,16 +1,8 @@
 import { v4 as uuidv4 } from 'uuid'
-import createWebsocket from '@solid-primitives/websocket'
-import {
-  createEffect,
-  createResource,
-  For,
-  Match,
-  Show,
-  Switch
-} from 'solid-js'
+import { createEffect, createResource, For, Show } from 'solid-js'
 import NoteCard from '~/components/features/TimeLine/NoteCard'
 import { Note, TimeLineChannel } from '~/components/features/TimeLine'
-import fetchAPI from '~/features/api/fetchAPI'
+import axios from 'axios'
 
 export interface ColumnProps {
   channel: TimeLineChannel
@@ -27,49 +19,52 @@ export default function Column(props: ColumnProps) {
             .split(/(?=[A-Z])/)
             .join('-')
             .toLowerCase()
-    const endpoint = `notes/${requestChannel}`
-    const requestBody = {
-      limit: 100
-    }
-    const defaultNotes: Note[] = await fetchAPI(endpoint, requestBody)
+    const defaultNotes: Note[] = (
+      await axios.get(
+        `${
+          import.meta.env.VITE_APP_URL
+        }/api/misskey/notes?channel=${requestChannel}`
+      )
+    ).data.notes
     return defaultNotes
   }
 
-  const [notes, { mutate }] = createResource<Note[]>(getTimeLines)
+  const getRequestParams = async () => {
+    const instance = (
+      await axios.get(`${import.meta.env.VITE_APP_URL}/api/user/instance`)
+    ).data.instance
+    const token = (
+      await axios.get(`${import.meta.env.VITE_APP_URL}/api/user/token`)
+    ).data.token
 
-  const onMessage = (msg: MessageEvent) => {
-    const messageDataJson: Note = JSON.parse(msg.data).body.body
-    mutate(prev => (prev ? [messageDataJson, ...prev] : [messageDataJson]))
+    return { instance, token }
   }
-  const socketUrl = `wss://${localStorage.getItem(
-    'instance'
-  )}/streaming?i=${localStorage.getItem('UserToken')}`
 
-  const [connect, _, send, state] = createWebsocket(
-    socketUrl,
-    onMessage,
-    (e: Event) => {
-      console.error(e)
-    },
-    [],
-    3,
-    5000
-  )
+  const [notes, { mutate }] = createResource<Note[]>(getTimeLines)
+  const [requestParams] = createResource(getRequestParams)
 
   createEffect(() => {
-    connect()
-  })
-
-  createEffect(() => {
-    if (state() === 1) {
-      const requestJson = `{
-          "type": "connect",
-          "body": {
-          "channel": "${props.channel}",
-          "id": "${uuidv4()}"
-        }
+    if (requestParams()?.instance && requestParams()?.token) {
+      const socketUrl = `wss://${requestParams()?.instance}/streaming?i=${
+        requestParams()?.token
       }`
-      send(requestJson)
+      const socket = new WebSocket(socketUrl)
+
+      socket.onmessage = msg => {
+        const messageDataJson: Note = JSON.parse(msg.data).body.body
+        mutate(prev => (prev ? [messageDataJson, ...prev] : [messageDataJson]))
+      }
+      const requestJson = `{
+            "type": "connect",
+            "body": {
+            "channel": "${props.channel}",
+            "id": "${uuidv4()}"
+          }
+        }`
+      socket.onopen = () => {
+        socket.send(requestJson)
+      }
+      return socket.close
     }
   })
 
@@ -87,22 +82,17 @@ export default function Column(props: ColumnProps) {
             x
           </button>
         </header>
+        {/* <Show when={!notes.loading}> */}
         <ul class="overflow-hidden overflow-y-scroll min-h-0">
-          <Switch>
-            <Match when={notes.loading}>
-              <p>Loading...</p>
-            </Match>
-            <Match when={!notes.loading}>
-              <For each={notes()}>
-                {note => (
-                  <li>
-                    <NoteCard {...note} />
-                  </li>
-                )}
-              </For>
-            </Match>
-          </Switch>
+          <For each={notes()}>
+            {note => (
+              <li>
+                <NoteCard {...note} />
+              </li>
+            )}
+          </For>
         </ul>
+        {/* </Show> */}
       </div>
     </Show>
   )
