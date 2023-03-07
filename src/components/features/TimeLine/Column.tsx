@@ -1,5 +1,12 @@
 import { v4 as uuidv4 } from 'uuid'
-import { createEffect, createResource, For, Show } from 'solid-js'
+import {
+  createEffect,
+  createResource,
+  For,
+  Match,
+  Show,
+  Switch
+} from 'solid-js'
 import NoteCard from '~/components/features/TimeLine/NoteCard'
 import { Note, TimeLineChannel } from '~/components/features/TimeLine'
 import axios from 'axios'
@@ -82,17 +89,22 @@ export default function Column(props: ColumnProps) {
             x
           </button>
         </header>
-        <Show when={!notes.loading}>
-          <ul class="overflow-hidden overflow-y-scroll min-h-0">
-            <For each={notes()}>
-              {note => (
-                <li>
-                  <NoteCard {...note} />
-                </li>
-              )}
-            </For>
-          </ul>
-        </Show>
+        <Switch>
+          <Match when={notes.loading}>
+            <p>Loading...</p>
+          </Match>
+          <Match when={!notes.loading}>
+            <ul class="overflow-hidden overflow-y-scroll min-h-0">
+              <For each={notes()}>
+                {note => (
+                  <li>
+                    <NoteCard {...note} />
+                  </li>
+                )}
+              </For>
+            </ul>
+          </Match>
+        </Switch>
       </div>
     </Show>
   )
