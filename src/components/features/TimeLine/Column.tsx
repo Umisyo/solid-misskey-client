@@ -2,6 +2,7 @@ import { v4 as uuidv4 } from 'uuid'
 import {
   createEffect,
   createResource,
+  createSignal,
   For,
   Match,
   Show,
@@ -10,6 +11,7 @@ import {
 import NoteCard from '~/components/features/TimeLine/NoteCard'
 import { Note, TimeLineChannel } from '~/components/features/TimeLine'
 import axios from 'axios'
+import { useGetTimeLines } from '~/components/features/TimeLine/hooks/useGetTimeLines'
 
 export interface ColumnProps {
   channel: TimeLineChannel
@@ -18,24 +20,6 @@ export interface ColumnProps {
 }
 
 export default function Column(props: ColumnProps) {
-  const getTimeLines = async () => {
-    const requestChannel =
-      props.channel === 'homeTimeline'
-        ? 'timeline'
-        : props.channel
-            .split(/(?=[A-Z])/)
-            .join('-')
-            .toLowerCase()
-    const defaultNotes: Note[] = (
-      await axios.get(
-        `${
-          import.meta.env.VITE_APP_URL
-        }/api/misskey/notes?channel=${requestChannel}`
-      )
-    ).data.notes
-    return defaultNotes
-  }
-
   const getRequestParams = async () => {
     const instance = (
       await axios.get(`${import.meta.env.VITE_APP_URL}/api/user/instance`)
@@ -47,7 +31,10 @@ export default function Column(props: ColumnProps) {
     return { instance, token }
   }
 
-  const [notes, { mutate }] = createResource<Note[]>(getTimeLines)
+  const [notes, { mutate }] = createResource<Note[]>(
+    () => props.channel,
+    useGetTimeLines
+  )
   const [requestParams] = createResource(getRequestParams)
 
   createEffect(() => {
