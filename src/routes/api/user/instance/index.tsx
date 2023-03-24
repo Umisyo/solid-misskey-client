@@ -5,7 +5,5 @@ export async function GET({ request }: APIEvent) {
   const session = await getUserSession(request)
   const instance = await session.get('instance')
 
-  console.log(instance)
-
   return json({ instance })
 }
