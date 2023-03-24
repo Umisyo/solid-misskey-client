@@ -31,7 +31,7 @@ export default function Column(props: ColumnProps) {
     return { instance, token }
   }
 
-  const [notes, { mutate }] = createResource<Note[]>(
+  const [notes, { mutate }] = createResource(
     () => props.channel,
     useGetTimeLines
   )
