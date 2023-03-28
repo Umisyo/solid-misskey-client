@@ -2,6 +2,7 @@ import axios from 'axios'
 import { Note, TimeLineChannel } from '~/components/features/TimeLine'
 
 export const useGetTimeLines = async (channel: TimeLineChannel) => {
+  console.log(channel)
   const requestChannel =
     channel === 'homeTimeline'
       ? 'timeline'

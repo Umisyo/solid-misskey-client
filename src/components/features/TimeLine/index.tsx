@@ -63,9 +63,7 @@ export default function TimeLine() {
   }
 
   const handleDelete = (index: number) => {
-    const newChannels = channels()
-      .slice(0, index)
-      .concat(channels().slice(index + 1))
+    const newChannels = channels().filter((_, i) => i !== index)
     setChannels(newChannels)
   }
 

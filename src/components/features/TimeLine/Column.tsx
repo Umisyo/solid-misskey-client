@@ -1,4 +1,5 @@
 import { v4 as uuidv4 } from 'uuid'
+import axios from 'axios'
 import {
   createEffect,
   createResource,
@@ -9,7 +10,6 @@ import {
 } from 'solid-js'
 import NoteCard from '~/components/features/TimeLine/NoteCard'
 import { Note, TimeLineChannel } from '~/components/features/TimeLine'
-import axios from 'axios'
 import { useGetTimeLines } from '~/components/features/TimeLine/hooks/useGetTimeLines'
 
 export interface ColumnProps {
