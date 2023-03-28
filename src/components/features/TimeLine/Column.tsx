@@ -81,13 +81,7 @@ export default function Column(props: ColumnProps) {
           </Match>
           <Match when={!notes.loading}>
             <ul class="overflow-hidden overflow-y-scroll min-h-0">
-              <For each={notes()}>
-                {note => (
-                  <li>
-                    <NoteCard {...note} />
-                  </li>
-                )}
-              </For>
+              <For each={notes()}>{note => <NoteCard {...note} />}</For>
             </ul>
           </Match>
         </Switch>

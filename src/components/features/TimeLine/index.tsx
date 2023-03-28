@@ -21,6 +21,7 @@ export interface Note {
   text: string | null
   cw: string | null
   user: User
+  files: Array<object> | null
   userId: string
   visibility: string
 }
