@@ -18,18 +18,18 @@ export interface ColumnProps {
   index: number
 }
 
+const getRequestParams = async () => {
+  const instance = (
+    await axios.get(`${import.meta.env.VITE_APP_URL}/api/user/instance`)
+  ).data.instance
+  const token = (
+    await axios.get(`${import.meta.env.VITE_APP_URL}/api/user/token`)
+  ).data.token
+
+  return { instance, token }
+}
+
 export default function Column(props: ColumnProps) {
-  const getRequestParams = async () => {
-    const instance = (
-      await axios.get(`${import.meta.env.VITE_APP_URL}/api/user/instance`)
-    ).data.instance
-    const token = (
-      await axios.get(`${import.meta.env.VITE_APP_URL}/api/user/token`)
-    ).data.token
-
-    return { instance, token }
-  }
-
   const [notes, { mutate }] = createResource(
     () => props.channel,
     useGetTimeLines
