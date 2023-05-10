@@ -2,40 +2,19 @@ import axios from 'axios'
 import { createSignal, For } from 'solid-js'
 import { useNavigate } from 'solid-start'
 import Column from '~/components/features/TimeLine/Column'
-
-export type User = {
-  id: string
-  createdAt: string
-  username: string
-  host: string | null
-  name: string
-  onlineStatus: string
-  avatarUrl: string
-  avatarBlurhash: string
-}
-
-export interface Note {
-  id: string
-  renote: Note | null
-  createdAt: string
-  text: string | null
-  cw: string | null
-  user: User
-  files: Array<object> | null
-  userId: string
-  visibility: string
-}
+import { TimeLineChannel } from '~/components/features/TimeLine/types/TimeLineChannel'
 
 const timeLineChannels = [
   'globalTimeline',
   'homeTimeline',
   'hybridTimeline',
   'localTimeline',
-  'main',
   ''
 ] as const
 
-export type TimeLineChannel = (typeof timeLineChannels)[number]
+const isTimeLineChannel = (channel: string): channel is TimeLineChannel => {
+  return timeLineChannels.includes(channel as TimeLineChannel)
+}
 
 export default function TimeLine() {
   const [channels, setChannels] = createSignal<TimeLineChannel[]>([
@@ -43,14 +22,13 @@ export default function TimeLine() {
   ])
   const [selectChannel, setSelectChannel] = createSignal<TimeLineChannel>('')
 
-  const isTimeLineChannel = (channel: string): channel is TimeLineChannel => {
-    return timeLineChannels.includes(channel as TimeLineChannel)
-  }
-
   const handleSelect = (
-    Event: InputEvent & { currentTarget: HTMLSelectElement; target: Element }
+    event: InputEvent & {
+      currentTarget: HTMLSelectElement
+      target: Element
+    }
   ) => {
-    const channel = Event.currentTarget.value
+    const channel = event.currentTarget.value
     if (isTimeLineChannel(channel)) {
       setSelectChannel(channel)
     }
@@ -72,7 +50,7 @@ export default function TimeLine() {
 
   return (
     <>
-      <label for="selectChannnel">
+      <label for="selectChannel">
         Add Channel
         <select
           name="channel"
@@ -83,7 +61,6 @@ export default function TimeLine() {
           <option value="homeTimeline">Home Timeline</option>
           <option value="hybridTimeline">Hybrid Timeline</option>
           <option value="localTimeline">Local Timeline</option>
-          <option value="main">Main</option>
         </select>
       </label>
       <button onClick={addChannel}>Add</button>

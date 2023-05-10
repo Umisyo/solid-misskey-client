@@ -1,16 +1,10 @@
 import { v4 as uuidv4 } from 'uuid'
 import axios from 'axios'
-import {
-  createEffect,
-  createResource,
-  For,
-  Match,
-  Show,
-  Switch
-} from 'solid-js'
+import { createEffect, createResource, For, Match, Switch } from 'solid-js'
 import NoteCard from '~/components/features/TimeLine/NoteCard'
-import { Note, TimeLineChannel } from '~/components/features/TimeLine'
 import { useGetTimeLines } from '~/components/features/TimeLine/hooks/useGetTimeLines'
+import { TimeLineChannel } from '~/components/features/TimeLine/types/TimeLineChannel'
+import { Note } from '~/components/features/TimeLine/types/Note'
 
 export interface ColumnProps {
   channel: TimeLineChannel
@@ -62,30 +56,28 @@ export default function Column(props: ColumnProps) {
   })
 
   return (
-    <Show when={props.channel !== 'main'}>
-      <div class="flex flex-col w-96 max-h-full border-l border-r">
-        <header class="flex items-center border min-h-[2.5rem] px-2">
-          <span>{props.channel}</span>
-          <button
-            class="m-0 ml-auto"
-            onClick={() => {
-              props.handleDelete(props.index)
-            }}
-          >
-            x
-          </button>
-        </header>
-        <Switch>
-          <Match when={notes.loading}>
-            <p>Loading...</p>
-          </Match>
-          <Match when={!notes.loading}>
-            <ul class="overflow-hidden overflow-y-scroll min-h-0">
-              <For each={notes()}>{note => <NoteCard {...note} />}</For>
-            </ul>
-          </Match>
-        </Switch>
-      </div>
-    </Show>
+    <div class="flex flex-col w-96 max-h-full border-l border-r">
+      <header class="flex items-center border min-h-[2.5rem] px-2">
+        <span>{props.channel}</span>
+        <button
+          class="m-0 ml-auto"
+          onClick={() => {
+            props.handleDelete(props.index)
+          }}
+        >
+          x
+        </button>
+      </header>
+      <Switch>
+        <Match when={notes.loading}>
+          <p>Loading...</p>
+        </Match>
+        <Match when={!notes.loading}>
+          <ul class="overflow-hidden overflow-y-scroll min-h-0">
+            <For each={notes()}>{note => <NoteCard {...note} />}</For>
+          </ul>
+        </Match>
+      </Switch>
+    </div>
   )
 }
