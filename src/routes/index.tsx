@@ -4,10 +4,11 @@ import { createServerData$, redirect } from 'solid-start/server'
 import https from 'https'
 import TimeLine from '~/components/features/TimeLine'
 import { createEffect } from 'solid-js'
+import CreateNote from '~/components/features/CreateNote'
 
 export function routeData() {
   return createServerData$(async (_, { request }) => {
-    const isLoggin = (
+    const isLogin = (
       await axios.get(`${import.meta.env.VITE_APP_URL}/api/user/isLogin`, {
         headers: { Cookie: request.headers.get('Cookie') },
         httpsAgent:
@@ -17,7 +18,7 @@ export function routeData() {
       })
     ).data
 
-    if (!isLoggin) throw redirect('/login')
+    if (!isLogin) throw redirect('/login')
   })
 }
 
@@ -29,7 +30,10 @@ export default function Home() {
   return (
     <main class="h-screen">
       <Title>Solid misskey client</Title>
-      <TimeLine />
+      <div class="flex">
+        <CreateNote />
+        <TimeLine />
+      </div>
     </main>
   )
 }

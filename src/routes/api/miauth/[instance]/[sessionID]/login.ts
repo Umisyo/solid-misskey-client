@@ -8,7 +8,7 @@ export async function GET({ params }: APIEvent) {
         params.sessionID
       }?callback=${import.meta.env.VITE_APP_URL}/api/miauth/${
         params.instance
-      }/${params.sessionID}/callback`
+      }/${params.sessionID}/callback&permission=write:notes`
     }
   })
 }

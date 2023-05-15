@@ -49,7 +49,7 @@ export default function TimeLine() {
   const navigate = useNavigate()
 
   return (
-    <>
+    <div>
       <label for="selectChannel">
         Add Channel
         <select
@@ -88,6 +88,6 @@ export default function TimeLine() {
           )}
         </For>
       </div>
-    </>
+    </div>
   )
 }
