@@ -3,7 +3,6 @@ import { Note } from '~/components/features/TimeLine/types/Note'
 import { TimeLineChannel } from '~/components/features/TimeLine/types/TimeLineChannel'
 
 export const useGetTimeLines = async (channel: TimeLineChannel) => {
-  console.log(channel)
   const requestChannel =
     channel === 'homeTimeline'
       ? 'timeline'

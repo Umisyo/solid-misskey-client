@@ -8,7 +8,6 @@ export async function POST({ request }: APIEvent) {
   const accessToken = session.get('token')
 
   const note = await new Response(request.body).json()
-  console.log(accessToken)
 
   const res = await axios
     .post(`https://${instance}/api/notes/create`, {
