@@ -44,7 +44,7 @@ dependencies:
 devDependencies:
   '@types/eslint': 8.21.1
   '@types/node': 18.14.3
-  '@types/prettier': 2.7.2
+  '@types/prettier': 2.7.3
   '@typescript-eslint/eslint-plugin': 5.54.0_6mj2wypvdnknez7kws2nfdgupi
   '@typescript-eslint/parser': 5.54.0_ycpbpc6yetojsgtrx3mwntkhsu
   autoprefixer: 10.4.13_postcss@8.4.35
@@ -55,7 +55,7 @@ devDependencies:
   husky: 8.0.3
   lint-staged: 13.1.2
   postcss: 8.4.35
-  prettier: 2.8.4
+  prettier: 2.8.8
   solid-start-node: 0.3.0_losk24o22zmzivytqta2uhhfr4
   solid-start-vercel: 0.3.0_kcukkxwu7ez4zfg3ddzycsa4ma
   tailwindcss: 3.2.7_postcss@8.4.35
@@ -2062,8 +2062,8 @@ packages:
   /@types/node/18.14.3:
     resolution: {integrity: sha512-1y36CC5iL5CMyKALzwX9cwwxcWIxvIBe3gzs4GrXWXEQ8klQnCZ2U/WDGiNrXHmQcUhnaun17XG9TEIDlGj2RA==}
 
-  /@types/prettier/2.7.2:
-    resolution: {integrity: sha512-KufADq8uQqo1pYKVIYzfKbJfBAc0sOeXqGbFaSpv8MRmC/zXgowNZmFcbngndGk922QDmOASEXUZCaY48gs4cg==}
+  /@types/prettier/2.7.3:
+    resolution: {integrity: sha512-+68kP9yzs4LMp7VNh8gdzMSPZFL44MLGqiHWvttYJe+6qnuVr4Ek9wSBQoveqY/r+LwjCcU29kNVkidwim+kYA==}
     dev: true
 
   /@types/resolve/1.20.2:
@@ -4546,8 +4546,8 @@ packages:
     engines: {node: '>= 0.8.0'}
     dev: true
 
-  /prettier/2.8.4:
-    resolution: {integrity: sha512-vIS4Rlc2FNh0BySk3Wkd6xmwxB0FpOndW5fisM5H8hsZSxU2VWVB5CWIkIjWvrHjIhxk2g3bfMKM87zNTrZddw==}
+  /prettier/2.8.8:
+    resolution: {integrity: sha512-tdN8qQGvNjw4CHbY+XXk0JgCXn9QiF21a55rBe5LJAU+kDyC4WQn4+awm2Xfk2lQMk5fKup9XgzTZtGkjBdP9Q==}
     engines: {node: '>=10.13.0'}
     hasBin: true
     dev: true
