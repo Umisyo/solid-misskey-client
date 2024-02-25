@@ -38,7 +38,7 @@ dependencies:
   axios: 1.6.7
   solid-js: 1.8.15
   solid-start: 0.3.1_pekoc45fzz5evwl74k4bimyuwi
-  undici: 5.20.0
+  undici: 5.28.3
   uuid: 9.0.1
 
 devDependencies:
@@ -56,7 +56,7 @@ devDependencies:
   lint-staged: 13.3.0
   postcss: 8.4.35
   prettier: 2.8.8
-  solid-start-node: 0.3.0_losk24o22zmzivytqta2uhhfr4
+  solid-start-node: 0.3.0_6p7ohnmmz2psfjotuc66jayowi
   solid-start-vercel: 0.3.0_kcukkxwu7ez4zfg3ddzycsa4ma
   tailwindcss: 3.2.7_postcss@8.4.35
   typescript: 4.9.5
@@ -1811,6 +1811,10 @@ packages:
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dev: true
 
+  /@fastify/busboy/2.1.0:
+    resolution: {integrity: sha512-+KpH+QxZU7O4675t3mnkQKcZZg56u+K/Ct2K+N2AZYNVK8kyeo/bI18tI8aPm3tvNNRyTWfj6s5tnGNlcbQRsA==}
+    engines: {node: '>=14'}
+
   /@hapi/hoek/9.3.0:
     resolution: {integrity: sha512-/c6rf4UJlmHlC9b5BaNvzAcFv7HZ2QHaV0D4/HNlBdvFnvQq8RI4kYdhyPCl7Xj+oWvTWQ8ujhqS53LIgAe6KQ==}
 
@@ -2633,12 +2637,6 @@ packages:
     engines: {node: '>=12'}
     dependencies:
       run-applescript: 5.0.0
-
-  /busboy/1.6.0:
-    resolution: {integrity: sha512-8SFQbg/0hQ9xy3UNTB0YEnsNBbWfhf7RtnzpL7TkBiTBRfrQ9Fxcnz7VJsleJpyp6rVLvXiuORqjlHi5q+PYuA==}
-    engines: {node: '>=10.16.0'}
-    dependencies:
-      streamsearch: 1.1.0
 
   /bytes/3.0.0:
     resolution: {integrity: sha512-pMhOfFDPiv9t5jjIXkHosWmkSyQbvsgEVNkz0ERHbuLh2T/7j4Mqqpz523Fe8MVY89KC6Sh/QfS2sM+SjgFDcw==}
@@ -4843,7 +4841,7 @@ packages:
       '@babel/types': 7.21.2
       solid-js: 1.8.15
 
-  /solid-start-node/0.3.0_losk24o22zmzivytqta2uhhfr4:
+  /solid-start-node/0.3.0_6p7ohnmmz2psfjotuc66jayowi:
     resolution: {integrity: sha512-kg0J6aTvnxGj3OnK4L6EQWY6O3y4dn0CB8Q+6e++Pbzw+VMs8uZg/H9/jg+Ul3fw9uitsnwgxQmieKviaSIxMQ==}
     peerDependencies:
       solid-start: '*'
@@ -4859,7 +4857,7 @@ packages:
       sirv: 2.0.3
       solid-start: 0.3.1_pekoc45fzz5evwl74k4bimyuwi
       terser: 5.19.2
-      undici: 5.20.0
+      undici: 5.28.3
       vite: 4.1.4_@types+node@18.19.18
     transitivePeerDependencies:
       - supports-color
@@ -4949,10 +4947,10 @@ packages:
       set-cookie-parser: 2.6.0
       sirv: 2.0.3
       solid-js: 1.8.15
-      solid-start-node: 0.3.0_losk24o22zmzivytqta2uhhfr4
+      solid-start-node: 0.3.0_6p7ohnmmz2psfjotuc66jayowi
       solid-start-vercel: 0.3.0_kcukkxwu7ez4zfg3ddzycsa4ma
       terser: 5.19.2
-      undici: 5.23.0
+      undici: 5.28.3
       vite: 4.1.4_@types+node@18.19.18
       vite-plugin-inspect: 0.7.35_rollup@3.27.2+vite@4.1.4
       vite-plugin-solid: 2.7.0_solid-js@1.8.15+vite@4.1.4
@@ -4982,10 +4980,6 @@ packages:
   /statuses/1.5.0:
     resolution: {integrity: sha512-OpZ3zP+jT1PI7I8nemJX4AKmAX070ZkYPVWV/AaKTJl+tXCTGyVdC1a4SL8RUQYEwk/f34ZX8UTykN68FwrqAA==}
     engines: {node: '>= 0.6'}
-
-  /streamsearch/1.1.0:
-    resolution: {integrity: sha512-Mcc5wHehp9aXz1ax6bZUyY5afg9u2rv5cqQI3mRrYkGC8rW2hM02jWuwjtL++LS5qinSyhj2QfLyNsuc+VsExg==}
-    engines: {node: '>=10.0.0'}
 
   /string-argv/0.3.2:
     resolution: {integrity: sha512-aqD2Q0144Z+/RqG52NeHEkZauTAUWJO8c6yTftGJKO3Tja5tUgIfmIl6kExvhtxSDP7fXB6DvzkfMpCd/F3G+Q==}
@@ -5234,17 +5228,11 @@ packages:
   /undici-types/5.26.5:
     resolution: {integrity: sha512-JlCMO+ehdEIKqlFxk6IfVoAUVmgz7cU7zD/h9XZ0qzeosSHmUJVOzSQvvYSYWXkFXC+IfLKSIffhv0sVZup6pA==}
 
-  /undici/5.20.0:
-    resolution: {integrity: sha512-J3j60dYzuo6Eevbawwp1sdg16k5Tf768bxYK4TUJRH7cBM4kFCbf3mOnM/0E3vQYXvpxITbbWmBafaDbxLDz3g==}
-    engines: {node: '>=12.18'}
-    dependencies:
-      busboy: 1.6.0
-
-  /undici/5.23.0:
-    resolution: {integrity: sha512-1D7w+fvRsqlQ9GscLBwcAJinqcZGHUKjbOmXdlE/v8BvEGXjeWAax+341q44EuTcHXXnfyKNbKRq4Lg7OzhMmg==}
+  /undici/5.28.3:
+    resolution: {integrity: sha512-3ItfzbrhDlINjaP0duwnNsKpDQk3acHI3gVJ1z4fmwMK31k5G9OVIAMLSIaP6w4FaGkaAkN6zaQO9LUvZ1t7VA==}
     engines: {node: '>=14.0'}
     dependencies:
-      busboy: 1.6.0
+      '@fastify/busboy': 2.1.0
 
   /unicode-canonical-property-names-ecmascript/2.0.0:
     resolution: {integrity: sha512-yY5PpDlfVIU5+y/BSCxAJRBIS1Zc2dDG3Ujq+sR0U+JjUevW2JhocOF+soROYDSaAezOzOKuyyixhD6mBknSmQ==}
