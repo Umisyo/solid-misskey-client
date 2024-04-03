@@ -38,7 +38,7 @@ dependencies:
   axios: 1.6.8
   solid-js: 1.8.16
   solid-start: 0.3.1_o5wyn32k4inlcrf4ecopgrgbz4
-  undici: 5.28.3
+  undici: 5.28.4
   uuid: 9.0.1
 
 devDependencies:
@@ -56,7 +56,7 @@ devDependencies:
   lint-staged: 13.3.0
   postcss: 8.4.38
   prettier: 2.8.8
-  solid-start-node: 0.3.0_6p7ohnmmz2psfjotuc66jayowi
+  solid-start-node: 0.3.0_vlo5d5pynwfpavkw6m7fs7xm6y
   solid-start-vercel: 0.3.0_kcukkxwu7ez4zfg3ddzycsa4ma
   tailwindcss: 3.2.7_postcss@8.4.38
   typescript: 4.9.5
@@ -1811,8 +1811,8 @@ packages:
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dev: true
 
-  /@fastify/busboy/2.1.0:
-    resolution: {integrity: sha512-+KpH+QxZU7O4675t3mnkQKcZZg56u+K/Ct2K+N2AZYNVK8kyeo/bI18tI8aPm3tvNNRyTWfj6s5tnGNlcbQRsA==}
+  /@fastify/busboy/2.1.1:
+    resolution: {integrity: sha512-vBZP4NlzfOlerQTnba4aqZoMhE/a9HY7HRqoOPaETQcSQuWEIyZMHGfVu6w9wGtGK5fED5qRs2DteVCjOH60sA==}
     engines: {node: '>=14'}
 
   /@hapi/hoek/9.3.0:
@@ -4841,7 +4841,7 @@ packages:
       '@babel/types': 7.21.2
       solid-js: 1.8.16
 
-  /solid-start-node/0.3.0_6p7ohnmmz2psfjotuc66jayowi:
+  /solid-start-node/0.3.0_vlo5d5pynwfpavkw6m7fs7xm6y:
     resolution: {integrity: sha512-kg0J6aTvnxGj3OnK4L6EQWY6O3y4dn0CB8Q+6e++Pbzw+VMs8uZg/H9/jg+Ul3fw9uitsnwgxQmieKviaSIxMQ==}
     peerDependencies:
       solid-start: '*'
@@ -4857,7 +4857,7 @@ packages:
       sirv: 2.0.3
       solid-start: 0.3.1_o5wyn32k4inlcrf4ecopgrgbz4
       terser: 5.19.2
-      undici: 5.28.3
+      undici: 5.28.4
       vite: 4.1.4_@types+node@18.19.29
     transitivePeerDependencies:
       - supports-color
@@ -4947,10 +4947,10 @@ packages:
       set-cookie-parser: 2.6.0
       sirv: 2.0.3
       solid-js: 1.8.16
-      solid-start-node: 0.3.0_6p7ohnmmz2psfjotuc66jayowi
+      solid-start-node: 0.3.0_vlo5d5pynwfpavkw6m7fs7xm6y
       solid-start-vercel: 0.3.0_kcukkxwu7ez4zfg3ddzycsa4ma
       terser: 5.19.2
-      undici: 5.28.3
+      undici: 5.28.4
       vite: 4.1.4_@types+node@18.19.29
       vite-plugin-inspect: 0.7.35_rollup@3.27.2+vite@4.1.4
       vite-plugin-solid: 2.7.0_solid-js@1.8.16+vite@4.1.4
@@ -5228,11 +5228,11 @@ packages:
   /undici-types/5.26.5:
     resolution: {integrity: sha512-JlCMO+ehdEIKqlFxk6IfVoAUVmgz7cU7zD/h9XZ0qzeosSHmUJVOzSQvvYSYWXkFXC+IfLKSIffhv0sVZup6pA==}
 
-  /undici/5.28.3:
-    resolution: {integrity: sha512-3ItfzbrhDlINjaP0duwnNsKpDQk3acHI3gVJ1z4fmwMK31k5G9OVIAMLSIaP6w4FaGkaAkN6zaQO9LUvZ1t7VA==}
+  /undici/5.28.4:
+    resolution: {integrity: sha512-72RFADWFqKmUb2hmmvNODKL3p9hcB6Gt2DOQMis1SEBaV6a4MH8soBvzg+95CYhCKPFedut2JY9bMfrDl9D23g==}
     engines: {node: '>=14.0'}
     dependencies:
-      '@fastify/busboy': 2.1.0
+      '@fastify/busboy': 2.1.1
 
   /unicode-canonical-property-names-ecmascript/2.0.0:
     resolution: {integrity: sha512-yY5PpDlfVIU5+y/BSCxAJRBIS1Zc2dDG3Ujq+sR0U+JjUevW2JhocOF+soROYDSaAezOzOKuyyixhD6mBknSmQ==}
