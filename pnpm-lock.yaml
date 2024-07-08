@@ -3,7 +3,7 @@ lockfileVersion: 5.4
 specifiers:
   '@solid-primitives/websocket': ^0.3.5
   '@solidjs/meta': ^0.29.0
-  '@solidjs/router': ^0.13.0
+  '@solidjs/router': ^0.14.0
   '@types/eslint': ^8.21.1
   '@types/node': ^18.11.18
   '@types/prettier': ^2.7.2
@@ -33,11 +33,11 @@ specifiers:
 dependencies:
   '@solid-primitives/websocket': 0.3.5_solid-js@1.8.18
   '@solidjs/meta': 0.29.0_solid-js@1.8.18
-  '@solidjs/router': 0.13.0_solid-js@1.8.18
+  '@solidjs/router': 0.14.1_solid-js@1.8.18
   '@types/uuid': 9.0.8
   axios: 1.7.2
   solid-js: 1.8.18
-  solid-start: 0.3.1_lxw2cg3y7wvlfiqjk36drz53py
+  solid-start: 0.3.1_lvamrn3xqwkwb7iuigctbuvwb4
   undici: 5.28.4
   uuid: 9.0.1
 
@@ -2021,8 +2021,8 @@ packages:
     dependencies:
       solid-js: 1.8.18
 
-  /@solidjs/router/0.13.0_solid-js@1.8.18:
-    resolution: {integrity: sha512-YHLbFv9J53+iG4yVrh0vVdYiyXPTk892UyZ1jiMPsUXn2dYkX4552N+8SjvlKWWsmNmYxaoefM6jZn1YtVIUUg==}
+  /@solidjs/router/0.14.1_solid-js@1.8.18:
+    resolution: {integrity: sha512-GumQ4jbt5xDngLypAndC4EjapY/3DP0G8Az4YWEVQHdCtjHwB8IOm32eEBxE9lKpOffbtXV0r/0X0mofHJ1m5w==}
     peerDependencies:
       solid-js: ^1.8.6
     dependencies:
@@ -4560,7 +4560,7 @@ packages:
       polka: 1.0.0-next.22
       rollup: 3.27.2
       sirv: 2.0.3
-      solid-start: 0.3.1_lxw2cg3y7wvlfiqjk36drz53py
+      solid-start: 0.3.1_lvamrn3xqwkwb7iuigctbuvwb4
       terser: 5.19.2
       undici: 5.28.4
       vite: 4.1.4_@types+node@18.19.39
@@ -4580,14 +4580,14 @@ packages:
       fast-glob: 3.2.12
       micromatch: 4.0.5
       rollup: 3.27.2
-      solid-start: 0.3.1_lxw2cg3y7wvlfiqjk36drz53py
+      solid-start: 0.3.1_lvamrn3xqwkwb7iuigctbuvwb4
       terser: 5.19.2
       vite: 4.1.4_@types+node@18.19.39
     transitivePeerDependencies:
       - encoding
       - supports-color
 
-  /solid-start/0.3.1_lxw2cg3y7wvlfiqjk36drz53py:
+  /solid-start/0.3.1_lvamrn3xqwkwb7iuigctbuvwb4:
     resolution: {integrity: sha512-so91EhE07F1aLgBUJUUBKEyEqfaJssADKVuRwxHOS5Gzpauh/1QsVuz4jPK4G4eeodamQ440QBCOf3t9Rc/mXQ==}
     hasBin: true
     peerDependencies:
@@ -4628,7 +4628,7 @@ packages:
       '@babel/preset-typescript': 7.22.5_@babel+core@7.22.10
       '@babel/template': 7.22.5
       '@solidjs/meta': 0.29.0_solid-js@1.8.18
-      '@solidjs/router': 0.13.0_solid-js@1.8.18
+      '@solidjs/router': 0.14.1_solid-js@1.8.18
       '@types/cookie': 0.5.1
       '@types/debug': 4.1.8
       chokidar: 3.5.3
