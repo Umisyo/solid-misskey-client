@@ -42,7 +42,7 @@ dependencies:
   uuid: 9.0.1
 
 devDependencies:
-  '@types/eslint': 8.56.11
+  '@types/eslint': 8.56.12
   '@types/node': 18.19.45
   '@types/prettier': 2.7.3
   '@typescript-eslint/eslint-plugin': 5.54.0_zaz7gzf6vqn3mh4hzljdlytmc4
@@ -2061,8 +2061,8 @@ packages:
     dependencies:
       '@types/ms': 0.7.31
 
-  /@types/eslint/8.56.11:
-    resolution: {integrity: sha512-sVBpJMf7UPo/wGecYOpk2aQya2VUGeHhe38WG7/mN5FufNSubf5VT9Uh9Uyp8/eLJpu1/tuhJ/qTo4mhSB4V4Q==}
+  /@types/eslint/8.56.12:
+    resolution: {integrity: sha512-03ruubjWyOHlmljCVoxSuNDdmfZDzsrrz0P2LeJsOXr+ZwFQ+0yQIwNCwt/GYhV7Z31fgtXJTAEs+FYlEL851g==}
     dependencies:
       '@types/estree': 1.0.5
       '@types/json-schema': 7.0.15
