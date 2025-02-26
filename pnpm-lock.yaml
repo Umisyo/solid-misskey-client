@@ -35,7 +35,7 @@ dependencies:
   '@solidjs/meta': 0.29.0_solid-js@1.9.5
   '@solidjs/router': 0.15.0_solid-js@1.9.5
   '@types/uuid': 9.0.8
-  axios: 1.8.0
+  axios: 1.8.1
   solid-js: 1.9.5
   solid-start: 0.3.1_ni6466nby4hyzmr5b3helzn47e
   undici: 5.28.5
@@ -2482,8 +2482,8 @@ packages:
     transitivePeerDependencies:
       - debug
 
-  /axios/1.8.0:
-    resolution: {integrity: sha512-AS3x1klSQ4VeoeAaOyITVjomjITxIRgpKVgAXhE8QFJiNiYliuU+cW0p7XpqvlwNKmiwE57aNEyhPtsfAxERqg==}
+  /axios/1.8.1:
+    resolution: {integrity: sha512-NN+fvwH/kV01dYUQ3PTOZns4LWtWhOFCAhQ/pHb88WQ1hNe5V/dvFwc4VJcDL11LT9xSX0QtsR8sWUuyOuOq7g==}
     dependencies:
       follow-redirects: 1.15.9
       form-data: 4.0.2
