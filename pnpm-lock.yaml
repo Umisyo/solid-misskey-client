@@ -43,7 +43,7 @@ dependencies:
 
 devDependencies:
   '@types/eslint': 8.56.12
-  '@types/node': 18.19.108
+  '@types/node': 18.19.109
   '@types/prettier': 2.7.3
   '@typescript-eslint/eslint-plugin': 5.54.0_g5ys5pf7esljvuy5rxkt3eva2u
   '@typescript-eslint/parser': 5.54.0_avq3eyf5kaj6ssrwo7fvkrwnji
@@ -60,7 +60,7 @@ devDependencies:
   solid-start-vercel: 0.3.0_kcukkxwu7ez4zfg3ddzycsa4ma
   tailwindcss: 3.2.7_postcss@8.5.4
   typescript: 4.9.5
-  vite: 4.1.4_@types+node@18.19.108
+  vite: 4.1.4_@types+node@18.19.109
 
 packages:
 
@@ -2084,8 +2084,8 @@ packages:
   /@types/ms/0.7.31:
     resolution: {integrity: sha512-iiUgKzV9AuaEkZqkOLDIvlQiL6ltuZd9tGcW3gwpnX8JbuiuhFlEGmmFXEXkN50Cvq7Os88IY2v0dkDqXYWVgA==}
 
-  /@types/node/18.19.108:
-    resolution: {integrity: sha512-JZv9uwGYYtfcsO7B99KszTlNhvrIWqsRy7Xjp5Hr7ZFj7DSlsxIi0zJfibe/1xtPn6kEEbfMjH2lbsubwa81pQ==}
+  /@types/node/18.19.109:
+    resolution: {integrity: sha512-aTMjVJGd4dEYg2Y+sIg5WmLlJc3vw9Da42ohoq+j4OX42JmQoLHyBwzbkOu7htkZekhlCey5TDYbvMqZuVY2KA==}
     dependencies:
       undici-types: 5.26.5
 
@@ -4686,7 +4686,7 @@ packages:
       solid-start: 0.3.1_rnsyw7zvwqikb2cj4vesop3bw4
       terser: 5.19.2
       undici: 5.29.0
-      vite: 4.1.4_@types+node@18.19.108
+      vite: 4.1.4_@types+node@18.19.109
     transitivePeerDependencies:
       - supports-color
 
@@ -4705,7 +4705,7 @@ packages:
       rollup: 3.27.2
       solid-start: 0.3.1_rnsyw7zvwqikb2cj4vesop3bw4
       terser: 5.19.2
-      vite: 4.1.4_@types+node@18.19.108
+      vite: 4.1.4_@types+node@18.19.109
     transitivePeerDependencies:
       - encoding
       - supports-color
@@ -4779,7 +4779,7 @@ packages:
       solid-start-vercel: 0.3.0_kcukkxwu7ez4zfg3ddzycsa4ma
       terser: 5.19.2
       undici: 5.29.0
-      vite: 4.1.4_@types+node@18.19.108
+      vite: 4.1.4_@types+node@18.19.109
       vite-plugin-inspect: 0.7.35_rollup@3.27.2+vite@4.1.4
       vite-plugin-solid: 2.7.0_solid-js@1.9.7+vite@4.1.4
       wait-on: 6.0.1_debug@4.3.4
@@ -5123,7 +5123,7 @@ packages:
       open: 9.1.0
       picocolors: 1.0.0
       sirv: 2.0.3
-      vite: 4.1.4_@types+node@18.19.108
+      vite: 4.1.4_@types+node@18.19.109
     transitivePeerDependencies:
       - rollup
       - supports-color
@@ -5141,12 +5141,12 @@ packages:
       merge-anything: 5.1.4
       solid-js: 1.9.7
       solid-refresh: 0.5.0_solid-js@1.9.7
-      vite: 4.1.4_@types+node@18.19.108
+      vite: 4.1.4_@types+node@18.19.109
       vitefu: 0.2.4_vite@4.1.4
     transitivePeerDependencies:
       - supports-color
 
-  /vite/4.1.4_@types+node@18.19.108:
+  /vite/4.1.4_@types+node@18.19.109:
     resolution: {integrity: sha512-3knk/HsbSTKEin43zHu7jTwYWv81f8kgAL99G5NWBcA1LKvtvcVAC4JjBH1arBunO9kQka+1oGbrMKOjk4ZrBg==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
@@ -5171,7 +5171,7 @@ packages:
       terser:
         optional: true
     dependencies:
-      '@types/node': 18.19.108
+      '@types/node': 18.19.109
       esbuild: 0.16.17
       postcss: 8.5.4
       resolve: 1.22.1
@@ -5187,7 +5187,7 @@ packages:
       vite:
         optional: true
     dependencies:
-      vite: 4.1.4_@types+node@18.19.108
+      vite: 4.1.4_@types+node@18.19.109
 
   /wait-on/6.0.1_debug@4.3.4:
     resolution: {integrity: sha512-zht+KASY3usTY5u2LgaNqn/Cd8MukxLGjdcZxT2ns5QzDmTFc4XoWBgC+C/na+sMRZTuVygQoMYwdcVjHnYIVw==}
